@@ -26,30 +26,30 @@ void dfs(int x) {
 
 // 1. DFS Implementation
 
-int main() {
-	int n, m;
-	cin >> n >> m;
-	for (int i = 0; i < m; i++) {
-		int a, b;
-		cin >> a >> b;
-		al[a].push_back(b);
-		al[b].push_back(a);
-	}
-	for (int i = 0; i < n; i++) {
-		dfs_num[i] = white;
-	}
-	dfs(1);
-	if (saver.size() == n) {
-		cout << "Connected" << endl;
-	}
-	else {
-		for (int i = 1; i < n+1; i++) {
-			if (saver.find(i) == saver.end()) {
-				cout << i << endl;
-			}
-		}
-	}
-}
+// int main() {
+// 	int n, m;
+// 	cin >> n >> m;
+// 	for (int i = 0; i < m; i++) {
+// 		int a, b;
+// 		cin >> a >> b;
+// 		al[a].push_back(b);
+// 		al[b].push_back(a);
+// 	}
+// 	for (int i = 0; i < n; i++) {
+// 		dfs_num[i] = white;
+// 	}
+// 	dfs(1);
+// 	if (saver.size() == n) {
+// 		cout << "Connected" << endl;
+// 	}
+// 	else {
+// 		for (int i = 1; i < n+1; i++) {
+// 			if (saver.find(i) == saver.end()) {
+// 				cout << i << endl;
+// 			}
+// 		}
+// 	}
+// }
 
 // 2. BFS Implementation
 
