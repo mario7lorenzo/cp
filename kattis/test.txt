@@ -1,1 +1,2 @@
-10000
+This is a short line.
+THIS IS A LONGER, MORE EXPENSIVE LINE.
