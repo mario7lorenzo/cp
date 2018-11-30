@@ -1,6 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+bool cuscom(pair<int, int> x, pair<int, int> y) {
+	return x.first < y.first; 
+}
+
+bool cuscom2(pair<int, int> x, pair<int, int> y) {
+	return x.second < y.second;
+}
+
 int main() {
 	int testcase;
 	cin >> testcase;
@@ -11,5 +19,6 @@ int main() {
 		float b = y2-(a*x2);
 		float c = (y3-y4) / (x3-x4);
 		float d = y4-(c*x4);
+		if ((x1 == x2))
 	}
 }
