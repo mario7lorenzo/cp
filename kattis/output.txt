@@ -1,0 +1,42 @@
+function gosperize(curve){
+    const scaled_curve = (scale(math_sqrt(2) / 2))(curve);
+    return connect_rigidly(
+        (rotate_around_origin(math_PI / 4))(scaled_curve),
+        (translate(0.5, 0.5))
+            ((rotate_around_origin(-math_PI / 4))(scaled_curve)));
+}
+
+function gosper_curve(level){
+    return (repeated(gosperize, level))(unit_line);
+}
+
+function param_gosper(level, angle_at){
+    return level === 0
+        ? unit_line
+        : (param_gosperize(angle_at(level)))(param_gosper(level - 1, angle_at));
+}
+
+function param_gosperize(theta){
+    function g(curve) {
+        const scale_factor = 1 / math_cos(theta) / 2;
+        const scaled_curve = (scale(scale_factor))(curve);
+        return connect_rigidly((rotate_around_origin(theta))(scaled_curve),
+                               (translate(0.5, math_sin(theta) * scale_factor))
+                               ((rotate_around_origin(-theta))(scaled_curve)));
+    }
+    return g;
+}
+
+function your_param_gosper(level, angle_at) {
+    return level === 0
+        ? unit_line
+        : (your_param_gosperize(angle_at(level)))
+        (your_param_gosper(level - 1, angle_at));
+}
+
+function your_param_gosperize(theta){
+    return curve => put_in_standard_position(
+      	
+        connect_ends((rotate_around_origin(theta))(curve),  (translate(0.5, math_sin(theta))) 
+        ((rotate_around_origin(-theta))(curve))));
+}
