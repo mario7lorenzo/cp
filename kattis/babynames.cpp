@@ -1,9 +1,17 @@
-#include <ext/pb_ds/assoc_container.hpp> // Common file 
-#include <ext/pb_ds/tree_policy.hpp> 
-#include <functional> // for less 
-#include <bits/stdc++.h>
+
+// C++ program to demonstrate the
+// ordered set in GNU C++
+#include <iostream>
 using namespace std;
+  
+// Header files, namespaces,
+// macros as defined above
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
 using namespace __gnu_pbds;
+  
+#define ordered_set tree<string, null_type,less<string>, rb_tree_tag,tree_order_statistics_node_update>
+  
 
 int main() {
 	int x;
